@@ -7,5 +7,5 @@
 # @example
 #   include win_apache::sites
 class win_apache::sites {
-  include win_apache::sites::sites
+  include win_apache::sites
 }
