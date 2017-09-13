@@ -2,6 +2,6 @@ require 'yaml'
 
 Facter.add(:apache_version) do
   setcode do
-      YAML.load(Facter::Util::Resolution.exec('puppet resource package apache-httpd --to_yaml'))
+    YAML.safe_load(Facter::Util::Resolution.exec('puppet resource package apache-httpd --to_yaml')['package']['apache-httpd']['ensure'])
   end
 end
