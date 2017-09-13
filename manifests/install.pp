@@ -8,7 +8,7 @@
 #   include win_apache::install
 class win_apache::install (
   $apache_version   = installed, #use installed, absent for uninstalled, or version number
-  $install_location = 'c:\tools\apache',
+  $install_location = 'c:\tools',
 
 ) {
     package { 'apache-httpd':
