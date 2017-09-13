@@ -6,11 +6,9 @@
 #
 # @example
 #   include win_apache::config
-class win_apache::config (
-  $conffile = 'c:\tools\apache24\conf\httpd.conf'
-){
-  file { "${conffile}":
+class win_apache::config {
+  file { $win_apache::conffile:
     ensure  => file,
-    content => epp('win_apache/httpd.conf.epp'),
+    content => epp('win_apache/httpd.conf.epp'), #basic template file
   }
 }

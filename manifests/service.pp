@@ -7,4 +7,8 @@
 # @example
 #   include win_apache::service
 class win_apache::service {
+  service { 'Apache':
+    ensure => running,
+    enable => true,
+  }
 }

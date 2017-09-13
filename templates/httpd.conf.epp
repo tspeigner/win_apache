@@ -221,7 +221,7 @@ ServerAdmin admin@example.com
 #
 # If your host doesn't have a registered DNS name, enter its IP address here.
 #
-ServerName localhost:8080
+ServerName <%= $facts[fqdn] %>:8080
 
 #
 # Deny access to the entirety of your server's filesystem. You must

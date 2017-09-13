@@ -6,14 +6,10 @@
 #
 # @example
 #   include win_apache::install
-class win_apache::install (
-  $apache_version   = installed, #use installed, absent for uninstalled, or version number
-  $install_location = 'c:\tools',
-
-) {
+class win_apache::install {
     package { 'apache-httpd':
-      ensure          => $apache_version,
+      ensure          => $win_apache::apache_version,
       provider        => chocolatey,
-      install_options => ['--params', '"', "/installLocation:${install_location}", '"'],
+      install_options => ['--params', '"', "/installLocation:${win_apache::install_location}", '"'],
     }
 }

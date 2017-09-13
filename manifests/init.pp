@@ -12,5 +12,8 @@ class win_apache {
   include win_apache::config
   include win_apache::service
   include win_apache::sites
-  include win_apache::params
+
+  Class['::win_apache::install']
+  -> Class ['::win_apache::config']
+  ~> Class ['::win_apache::service'] # the ~> "notifies" the service when a change happens.
 }
