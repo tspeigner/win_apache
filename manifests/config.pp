@@ -9,7 +9,7 @@
 class win_apache::config (
   $conffile = 'c:\tools\apache24\conf\httpd.conf'
 ){
-  file_line { 'sudo_rule':
+  file_line { 'Listen':
     path => "${conffile}",
     line => 'Listen 80',
   }
