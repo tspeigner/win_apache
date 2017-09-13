@@ -14,6 +14,6 @@ class win_apache::install (
     package { 'apache-httpd':
       ensure          => $apache_version,
       provider        => chocolatey,
-      install_options => ['--params', "'/installLocation:""${install_location}""'"]
+      install_options => ['--params', '"', "/installLocation:${install_location}", '"'],
     }
 }
