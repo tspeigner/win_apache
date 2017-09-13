@@ -9,8 +9,8 @@
 class win_apache::config (
   $conffile = 'c:\tools\apache24\conf\httpd.conf'
 ){
-  file_line { 'Listen':
-    path => "${conffile}",
-    line => 'Listen 80',
+  file { "${conffile}":
+    ensure  => file,
+    content => epp('win_apache/httpd.conf.epp'),
   }
 }
