@@ -15,6 +15,6 @@ class win_apache::config (
   }
   $varfoo = hiera('win_apache::config::conffile')
   $varfoo2 = $win_apache::config::conffile
-  notify { "$varfoo":}
+  #notify { "$varfoo":}
   notify { "$varfoo2": }
 }
