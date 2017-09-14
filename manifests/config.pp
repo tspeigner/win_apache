@@ -7,7 +7,7 @@
 # @example
 #   include win_apache::config
 class win_apache::config {
-  file { "${::conffile}":
+  file { "${win_apache::conffile}":
     ensure  => file,
     content => epp('win_apache/httpd.conf.epp'), #basic template file
   }
