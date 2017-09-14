@@ -7,6 +7,8 @@
 # @example
 #   include win_apache::service
 class win_apache::service {
+  include win_apache
+  $win_apache::conffile
   service { 'Apache':
     ensure => running,
     enable => true,
