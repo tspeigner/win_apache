@@ -8,7 +8,7 @@
 # @example
 #   include win_apache
 class win_apache {
-  $win_apache::conffile
+  $::conffile
   include win_apache::install
   include win_apache::config
   include win_apache::service
