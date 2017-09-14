@@ -57,7 +57,7 @@ ServerRoot "${SRVROOT}"
 # prevent Apache from glomming onto all bound IP addresses.
 #
 #Listen 12.34.56.78:80
-Listen 8082
+Listen 8080
 
 #
 # Dynamic Shared Object (DSO) Support
@@ -221,7 +221,7 @@ ServerAdmin admin@example.com
 #
 # If your host doesn't have a registered DNS name, enter its IP address here.
 #
-ServerName <%= $facts[fqdn] %>:8082
+ServerName <%= $facts[fqdn] %>:8080
 
 #
 # Deny access to the entirety of your server's filesystem. You must
