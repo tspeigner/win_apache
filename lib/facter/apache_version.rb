@@ -1,8 +1,8 @@
-require 'yaml'
-
 Facter.add(:apache_version) do
   setcode do
-    YAML.safe_load(Facter::Util::Resolution.exec('puppet resource package apache-httpd --to_yaml')['package']['apache-httpd']['ensure'])
-    #YAML.load(test)['package']['tar']['ensure']
+    # Using choco list on the package namage, then splitting the results (on space)
+    # then getting the 4 item.  This might change later if choco list has a different output
+    # but this works for now.
+    Facter::Util::Resolution.exec('choco list apache-httpd').split[3]
   end
 end

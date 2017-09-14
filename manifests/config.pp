@@ -9,7 +9,7 @@
 class win_apache::config (
   $conffile = 'c:\tools\apache24\conf\httpd.conf'
 ) {
-  file { "$conffile":
+  file { "${win_apache::conffile}":
     ensure  => file,
     content => epp('win_apache/httpd.conf.epp'), #basic template file
   }
