@@ -19,5 +19,7 @@
 /spec/fixtures/modules/
 /tmp/
 /vendor/
+/.vscode/
 
 .DS_Store
+
