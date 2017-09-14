@@ -8,7 +8,6 @@
 #   include win_apache::config
 class win_apache::config {
   include win_apache
-  $win_apache::conffile
   file { $win_apache::conffile:
     ensure  => file,
     content => epp('win_apache/httpd.conf.epp'), #basic template file
