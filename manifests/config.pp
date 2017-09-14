@@ -13,4 +13,7 @@ class win_apache::config (
     ensure  => file,
     content => epp('win_apache/httpd.conf.epp'), #basic template file
   }
+  $varfoo = hiera('win_apache::config::conffile')
+  notify { "$varfoo":
+  }
 }
