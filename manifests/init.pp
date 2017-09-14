@@ -9,6 +9,8 @@
 #   include win_apache
 class win_apache (
   $conffile,
+  $apache_version,
+  $install_location,
 ) {
   include win_apache::install
   include win_apache::config
