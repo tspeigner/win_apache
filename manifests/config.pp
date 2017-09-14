@@ -6,9 +6,9 @@
 #
 # @example
 #   include win_apache::config
-class win_apache::config (
-  $conffile,
-) {
+# paramter is actually win_apache::config::conffile > looks up value in hiera, set param and value in hiera
+class win_apache::config {
+  include win_apache
   file { $conffile:
     ensure  => file,
     content => epp('win_apache/httpd.conf.epp'), #basic template file
