@@ -5,67 +5,46 @@
 
 1. [Description](#description)
 2. [Setup - The basics of getting started with win_apache](#setup)
-    * [What win_apache affects](#what-win_apache-affects)
     * [Setup requirements](#setup-requirements)
     * [Beginning with win_apache](#beginning-with-win_apache)
 3. [Usage - Configuration options and additional functionality](#usage)
 4. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
+7. [Release Notes](#release)
 
 ## Description
 
-Start with a one- or two-sentence summary of what the module does and/or what problem it solves. This is your 30-second elevator pitch for your module. Consider including OS/Puppet version it works with.       
-
-You can give more descriptive information in a second paragraph. This paragraph should answer the questions: "What does this module *do*?" and "Why would I use it?" If your module has a range of functionality (installation, configuration, management, etc.), this is the time to mention it.
+This module installs and configures Apache for Windows.  We use [Chocolatey](https://forge.puppet.com/puppetlabs/chocolatey) for the installation and a [Puppet Template](https://docs.puppet.com/puppet/5.1/lang_template_epp.html) file, which is pretty basic at the moment, but you can make it your own.  We will continue to add on as we can and make it smarter and more robust.
 
 ## Setup
 
-### What win_apache affects **OPTIONAL**
+### Setup Requirements 
 
-If it's obvious what your module touches, you can skip this section. For example, folks can probably figure out that your mysql_instance module affects their MySQL instances.
-
-If there's more that they should know about, though, this is the place to mention:
-
-* Files, packages, services, or operations that the module will alter, impact, or execute.
-* Dependencies that your module automatically installs.
-* Warnings or other important notices.
-
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled, another module, etc.), mention it here. 
-  
-If your most recent release breaks compatibility or requires particular steps for upgrading, you might want to include an additional "Upgrading" section here.
+This module does require Chocolatey to install the package, but you can define where it is installed to.  Check out the [Hiera](https://docs.puppet.com/puppet/5.1/hiera_intro.html) data [here](https://github.com/tspeigner/win_apache/blob/master/data/common.yaml).
 
 ### Beginning with win_apache  
 
-The very basic steps needed for a user to get the module up and running. This can include setup steps, if necessary, or it can be an example of the most basic use of the module.
-
-## Usage
-
-This section is where you describe how to customize, configure, and do the fancy stuff with your module here. It's especially helpful if you include usage examples and code samples for doing things with your module.
+```sh
+include win_mysql
+```
 
 ## Reference
 
-Users need a complete list of your module's classes, types, defined types providers, facts, and functions, along with the parameters for each. You can provide this list either via Puppet Strings code comments or as a complete list in the README Reference section.
+[Chocolatey](https://forge.puppet.com/puppetlabs/chocolatey)
 
-* If you are using Puppet Strings code comments, this Reference section should include Strings information so that your users know how to access your documentation.
-
-* If you are not using Puppet Strings, include a list of all of your classes, defined types, and so on, along with their parameters. Each element in this listing should include:
-
-  * The data type, if applicable.
-  * A description of what the element does.
-  * Valid values, if the data type doesn't make it obvious.
-  * Default value, if any.
+We do create an [apache_version](https://github.com/tspeigner/win_apache/blob/master/lib/facter/apache_version.rb) fact and it is visible and usable in the environment.  It is set to find the current version based on chocolatey output and we will keep tabs on if the scope changes and will update accordingly.
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc. If there are Known Issues, you might want to include them under their own heading here.
+This has only been tested on Windows 2012 R2, but will be tested on Windows 2016 soon.  If you try it and it works let us know.
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them know what the ground rules for contributing are.
+Fork it, develop it, push it.  Or just give feedback, you won't hurt my feelings.
 
-## Release Notes/Contributors/Etc. **Optional**
+## Release Notes 
 
-If you aren't using changelog, put your release notes here (though you should consider using changelog). You can also add any additional sections you feel are necessary or important to include here. Please use the `## ` header. 
+0.1.0 Was just about getting it out here.  All of the basic functionality to get it installed and configured.  
+
+0.2.0 Updating the README file to give proper information.  
