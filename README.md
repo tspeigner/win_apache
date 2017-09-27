@@ -26,7 +26,7 @@ This module does require Chocolatey to install the package, but you can define w
 ### Beginning with win_apache  
 
 ```sh
-include win_mysql
+include win_apache
 ```
 
 ## Reference
@@ -45,6 +45,4 @@ Fork it, develop it, push it.  Or just give feedback, you won't hurt my feelings
 
 ## Release Notes 
 
-0.1.0 Was just about getting it out here.  All of the basic functionality to get it installed and configured.  
-
-0.1.1 Updating the README file to give proper information.  
+See the [Changelog](https://forge.puppet.com/tspy/win_apache/changelog)
