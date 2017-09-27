@@ -4,6 +4,7 @@
 .yardwarns
 *.iml
 /.bundle/
+/archive/
 /.idea/
 /.vagrant/
 /coverage/
