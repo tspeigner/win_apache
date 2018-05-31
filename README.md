@@ -17,6 +17,7 @@
 
 This module installs and configures Apache for Windows.  We use [Chocolatey](https://forge.puppet.com/puppetlabs/chocolatey) for the installation and a [Puppet Template](https://docs.puppet.com/puppet/5.1/lang_template_epp.html) file, which is pretty basic at the moment, but you can make it your own.  We will continue to add on as we can and make it smarter and more robust.
 
+## Setup
 
 ### Setup Requirements 
 
