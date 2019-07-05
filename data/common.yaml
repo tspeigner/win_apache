@@ -1,4 +1,4 @@
 ---
-win_apache::conffile: "c:\tools\apache24\conf\httpd.conf" #change to reflect <path-to-conf-file>
+win_apache::conffile: "c:\\tools\\apache24\\conf\\httpd.conf" #change to reflect <path-to-conf-file>
 win_apache::apache_version: 'installed' #use installed, absent for uninstalled, or version number
 win_apache::install_location: 'c:\\tools' #The installer will still install to "\Apache24"
